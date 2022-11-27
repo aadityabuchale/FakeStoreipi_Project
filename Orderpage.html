@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../src/scripts/Shopping-Site.js"></script>
+</head>
+<style>
+    *{
+        margin: 0px 2px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family:'montserrat';
+    }
+    .container{
+        width: 600px;
+        font-size: 17px;
+        margin-top: 120px;
+        padding: 35px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(202, 202, 202);
+        border-radius: 7px;
+        /* background:linear-gradient(135deg, #ce9cff 0%,#7165f2 100%); */
+        /* background:linear-gradient(135deg, #5ac4f1 0%,#5ac5f7 100%);  */
+        background:linear-gradient(135deg, #84baf9 0%,#5ea3f6 100%);
+        box-shadow: 0px 0px 5px rgb(158, 157, 157);
+    }
+</style>
+<body class="container-fluid">
+    <div class="border-1 container" id="cardDetails" >
+        <h2 style="text-align: center;font-weight:500;" class="mb-4">Payment  Details</h2>
+        <dl>
+            <dt class="pb-2">Enter Card Number</dt>
+            <dd class="input-group"><input onkeyup="CardClick()" style="box-shadow: none;" maxlength="16" minlength="16" class="form-control w-50" type="text" id="inpText"><img id="img"  class="input-group-text form" width="80px" height="40px"></dd>
+            <dd id="error"></dd>
+            <dt class="mt-3">CVV</dt>
+            <dd ><input style="padding:1px 4px;" type="text" onkeyup="VerifyCvv()" id="txtCvv" size="3" maxlength="3" minlength="3" disabled ></dd>
+            <dt class="pb-1 mt-2">Expiry</dt>
+            <dd>
+                <select style="border-radius: 3px; padding: 3px;" id="lstYear" onchange="VerifyYear()" disabled>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+                 </select>
+            </dd>
+            <dt class="mt-3 mb-1">Mobile Number</dt>
+            <dd><input type="text" class="form-control w-50 h-50" disabled style="box-shadow: none;" id="number" maxlength="13" onkeyup="verifyMobNo()"></dd>
+            <dd id="mobError"></dd>
+        </dl>
+        <button id="btnPay" class="btn btn-warning w-100 mt-3" disabled onclick="PayClick()">Pay</button>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
